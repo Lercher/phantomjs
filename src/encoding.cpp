@@ -29,6 +29,10 @@
 */
 
 #include "encoding.h"
+#include "codepage437.h"
+
+// Wier brauchen diese unbenutzte Referenz, damit Qt mit QTextCodec::codecForName() diesen Codec unter "IBM437" findet:
+static QTextCodec* dos = new QCodePage437Codec();
 
 Encoding::Encoding()
 {

@@ -26,7 +26,8 @@ HEADERS += csconverter.h \
     encoding.h \
     config.h \
     childprocess.h \
-    repl.h
+    repl.h \
+    codepage437.h
 
 SOURCES += phantom.cpp \
     callback.cpp \
@@ -44,7 +45,8 @@ SOURCES += phantom.cpp \
     encoding.cpp \
     config.cpp \
     childprocess.cpp \
-    repl.cpp
+    repl.cpp \
+    codepage437.cpp
 
 OTHER_FILES += \
     bootstrap.js \
