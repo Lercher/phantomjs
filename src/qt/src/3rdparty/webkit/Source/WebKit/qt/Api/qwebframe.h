@@ -216,7 +216,7 @@ public Q_SLOTS:
     QVariant evaluateJavaScript(const QString& scriptSource, const QString& file = QString());
 #ifndef QT_NO_PRINTER
     void print(QPrinter *printer) const;
-    void print(QPrinter *printer, PrintCallback *callback) const;
+    void print(QPrinter *printer, PrintCallback *callback, QPainter& painter) const;
 #endif
 
 Q_SIGNALS:

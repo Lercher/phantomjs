@@ -6103,6 +6103,7 @@ void QPainter::drawText(const QPointF &p, const QString &str, int tf, int justif
     if (qt_show_painter_debug_output)
         printf("QPainter::drawText(), pos=[%.2f,%.2f], str='%s'\n", p.x(), p.y(), str.toLatin1().constData());
 #endif
+    this->drawTextHook(str);
 
     Q_D(QPainter);
 
@@ -6186,6 +6187,7 @@ void QPainter::drawText(const QRect &r, int flags, const QString &str, QRect *br
         printf("QPainter::drawText(), r=[%d,%d,%d,%d], flags=%d, str='%s'\n",
            r.x(), r.y(), r.width(), r.height(), flags, str.toLatin1().constData());
 #endif
+    this->drawTextHook(str);
 
     Q_D(QPainter);
 
@@ -6262,6 +6264,7 @@ void QPainter::drawText(const QRectF &r, int flags, const QString &str, QRectF *
         printf("QPainter::drawText(), r=[%.2f,%.2f,%.2f,%.2f], flags=%d, str='%s'\n",
            r.x(), r.y(), r.width(), r.height(), flags, str.toLatin1().constData());
 #endif
+    this->drawTextHook(str);
 
     Q_D(QPainter);
 
@@ -6355,6 +6358,7 @@ void QPainter::drawText(const QRectF &r, const QString &text, const QTextOption 
         printf("QPainter::drawText(), r=[%.2f,%.2f,%.2f,%.2f], str='%s'\n",
            r.x(), r.y(), r.width(), r.height(), text.toLatin1().constData());
 #endif
+    this->drawTextHook(text);
 
     Q_D(QPainter);
 

@@ -555,6 +555,9 @@ public:
     QT3_SUPPORT qreal translationY() const;
 #endif
 
+protected:
+    inline virtual void drawTextHook(const QString &str) {}
+
 private:
     Q_DISABLE_COPY(QPainter)
     friend class Q3Painter;

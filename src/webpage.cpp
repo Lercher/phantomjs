@@ -66,6 +66,7 @@
 #include "callback.h"
 #include "cookiejar.h"
 #include "system.h"
+#include "textcapturingqpainter.h"
 
 #ifdef Q_OS_WIN32
 #include <io.h>
@@ -1161,7 +1162,8 @@ bool WebPage::renderPdf(const QString &fileName)
 
     printer.setPageMargins(marginLeft, marginTop, marginRight, marginBottom, QPrinter::Point);
 
-    m_mainFrame->print(&printer, this);
+    TextCapturingQPainter painter;
+    m_mainFrame->print(&printer, this, painter);
     return true;
 }
 

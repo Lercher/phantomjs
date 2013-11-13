@@ -1435,13 +1435,12 @@ bool QWebFrame::event(QEvent *e)
 */
 void QWebFrame::print(QPrinter* printer) const
 {
-    print(printer, 0);
+    QPainter painter;
+    print(printer, 0, painter);
 }
 
-void QWebFrame::print(QPrinter *printer, PrintCallback *callback) const
+void QWebFrame::print(QPrinter *printer, PrintCallback *callback, QPainter& painter) const
 {
-    QPainter painter;
-
     HeaderFooter headerFooter(this, printer, callback);
 
     if (!painter.begin(printer))

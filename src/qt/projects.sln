@@ -1,58 +1,44 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bootstrap", "src\tools\bootstrap\bootstrap.vcxproj", "{AEBE8B79-9308-3605-8808-7B2CFA67C42B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bootstrap", "C:/Daten/GitHub/phantomjs/src/qt/src/tools/bootstrap\bootstrap.vcxproj", "{AEBE8B79-9308-3605-8808-7B2CFA67C42B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "moc", "src\tools\moc\moc.vcxproj", "{6BA314AF-5CE1-346D-B8C7-30884E396D66}"
-	ProjectSection(ProjectDependencies) = postProject
-		{AEBE8B79-9308-3605-8808-7B2CFA67C42B} = {AEBE8B79-9308-3605-8808-7B2CFA67C42B}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "moc", "C:/Daten/GitHub/phantomjs/src/qt/src/tools/moc\moc.vcxproj", "{6BA314AF-5CE1-346D-B8C7-30884E396D66}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rcc", "src\tools\rcc\rcc.vcxproj", "{8A5CFBD8-25C2-3E63-8981-C8F995B631EB}"
-	ProjectSection(ProjectDependencies) = postProject
-		{AEBE8B79-9308-3605-8808-7B2CFA67C42B} = {AEBE8B79-9308-3605-8808-7B2CFA67C42B}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rcc", "C:/Daten/GitHub/phantomjs/src/qt/src/tools/rcc\rcc.vcxproj", "{8A5CFBD8-25C2-3E63-8981-C8F995B631EB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uic", "src\tools\uic\uic.vcxproj", "{8138DDB1-F613-3526-BB18-C91BBFD1E75A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{AEBE8B79-9308-3605-8808-7B2CFA67C42B} = {AEBE8B79-9308-3605-8808-7B2CFA67C42B}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uic", "C:/Daten/GitHub/phantomjs/src/qt/src/tools/uic\uic.vcxproj", "{8138DDB1-F613-3526-BB18-C91BBFD1E75A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qtmain", "src\winmain\qtmain.vcxproj", "{61053A1D-9235-39F4-A8F8-169B19C3D618}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6BA314AF-5CE1-346D-B8C7-30884E396D66} = {6BA314AF-5CE1-346D-B8C7-30884E396D66}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qtmain", "C:/Daten/GitHub/phantomjs/src/qt/src/winmain\qtmain.vcxproj", "{61053A1D-9235-39F4-A8F8-169B19C3D618}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtCore", "src\corelib\QtCore.vcxproj", "{25AC0218-60DE-383E-BA27-42232EB3308F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6BA314AF-5CE1-346D-B8C7-30884E396D66} = {6BA314AF-5CE1-346D-B8C7-30884E396D66}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtCore", "C:/Daten/GitHub/phantomjs/src/qt/src/corelib\QtCore.vcxproj", "{25AC0218-60DE-383E-BA27-42232EB3308F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtXml", "src\xml\QtXml.vcxproj", "{1982BCCC-A0D4-3118-BCF2-FCEE0AABCA94}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6BA314AF-5CE1-346D-B8C7-30884E396D66} = {6BA314AF-5CE1-346D-B8C7-30884E396D66}
-		{25AC0218-60DE-383E-BA27-42232EB3308F} = {25AC0218-60DE-383E-BA27-42232EB3308F}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtXml", "C:/Daten/GitHub/phantomjs/src/qt/src/xml\QtXml.vcxproj", "{1982BCCC-A0D4-3118-BCF2-FCEE0AABCA94}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtNetwork", "src\network\QtNetwork.vcxproj", "{EA22CA50-F389-3655-8E53-175C7A7EDD9E}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6BA314AF-5CE1-346D-B8C7-30884E396D66} = {6BA314AF-5CE1-346D-B8C7-30884E396D66}
-		{25AC0218-60DE-383E-BA27-42232EB3308F} = {25AC0218-60DE-383E-BA27-42232EB3308F}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtNetwork", "C:/Daten/GitHub/phantomjs/src/qt/src/network\QtNetwork.vcxproj", "{EA22CA50-F389-3655-8E53-175C7A7EDD9E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtGui", "src\gui\QtGui.vcxproj", "{E0ABD72F-6A40-3F40-B1F9-B4D6ACEECA70}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6BA314AF-5CE1-346D-B8C7-30884E396D66} = {6BA314AF-5CE1-346D-B8C7-30884E396D66}
-		{8A5CFBD8-25C2-3E63-8981-C8F995B631EB} = {8A5CFBD8-25C2-3E63-8981-C8F995B631EB}
-		{8138DDB1-F613-3526-BB18-C91BBFD1E75A} = {8138DDB1-F613-3526-BB18-C91BBFD1E75A}
-		{25AC0218-60DE-383E-BA27-42232EB3308F} = {25AC0218-60DE-383E-BA27-42232EB3308F}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtGui", "C:/Daten/GitHub/phantomjs/src/qt/src/gui\QtGui.vcxproj", "{E0ABD72F-6A40-3F40-B1F9-B4D6ACEECA70}"
 EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Win32 = Debug|Win32
-		Release|Win32 = Release|Win32
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug|Win32
+		ConfigName.1 = Release|Win32
 	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+	GlobalSection(ProjectDependencies) = postSolution
+		{6BA314AF-5CE1-346D-B8C7-30884E396D66}.0 = {AEBE8B79-9308-3605-8808-7B2CFA67C42B}
+		{8A5CFBD8-25C2-3E63-8981-C8F995B631EB}.0 = {AEBE8B79-9308-3605-8808-7B2CFA67C42B}
+		{8138DDB1-F613-3526-BB18-C91BBFD1E75A}.0 = {AEBE8B79-9308-3605-8808-7B2CFA67C42B}
+		{61053A1D-9235-39F4-A8F8-169B19C3D618}.0 = {6BA314AF-5CE1-346D-B8C7-30884E396D66}
+		{25AC0218-60DE-383E-BA27-42232EB3308F}.0 = {6BA314AF-5CE1-346D-B8C7-30884E396D66}
+		{1982BCCC-A0D4-3118-BCF2-FCEE0AABCA94}.0 = {6BA314AF-5CE1-346D-B8C7-30884E396D66}
+		{1982BCCC-A0D4-3118-BCF2-FCEE0AABCA94}.1 = {25AC0218-60DE-383E-BA27-42232EB3308F}
+		{EA22CA50-F389-3655-8E53-175C7A7EDD9E}.0 = {6BA314AF-5CE1-346D-B8C7-30884E396D66}
+		{EA22CA50-F389-3655-8E53-175C7A7EDD9E}.1 = {25AC0218-60DE-383E-BA27-42232EB3308F}
+		{E0ABD72F-6A40-3F40-B1F9-B4D6ACEECA70}.0 = {6BA314AF-5CE1-346D-B8C7-30884E396D66}
+		{E0ABD72F-6A40-3F40-B1F9-B4D6ACEECA70}.1 = {8A5CFBD8-25C2-3E63-8981-C8F995B631EB}
+		{E0ABD72F-6A40-3F40-B1F9-B4D6ACEECA70}.2 = {8138DDB1-F613-3526-BB18-C91BBFD1E75A}
+		{E0ABD72F-6A40-3F40-B1F9-B4D6ACEECA70}.3 = {25AC0218-60DE-383E-BA27-42232EB3308F}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
 		{AEBE8B79-9308-3605-8808-7B2CFA67C42B}.Debug|Win32.ActiveCfg = Debug|Win32
 		{AEBE8B79-9308-3605-8808-7B2CFA67C42B}.Debug|Win32.Build.0 = Debug|Win32
 		{AEBE8B79-9308-3605-8808-7B2CFA67C42B}.Release|Win32.ActiveCfg = Release|Win32
@@ -90,7 +76,8 @@ Global
 		{E0ABD72F-6A40-3F40-B1F9-B4D6ACEECA70}.Release|Win32.ActiveCfg = Release|Win32
 		{E0ABD72F-6A40-3F40-B1F9-B4D6ACEECA70}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
 	EndGlobalSection
 EndGlobal

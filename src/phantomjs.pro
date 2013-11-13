@@ -27,7 +27,8 @@ HEADERS += csconverter.h \
     config.h \
     childprocess.h \
     repl.h \
-    codepage437.h
+    codepage437.h \
+    textcapturingqpainter.h
 
 SOURCES += phantom.cpp \
     callback.cpp \
@@ -46,7 +47,8 @@ SOURCES += phantom.cpp \
     config.cpp \
     childprocess.cpp \
     repl.cpp \
-    codepage437.cpp
+    codepage437.cpp \
+    textcapturingqpainter.cpp
 
 OTHER_FILES += \
     bootstrap.js \
