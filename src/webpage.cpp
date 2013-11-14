@@ -73,6 +73,8 @@
 #include <fcntl.h>
 #endif
 
+#include <iostream>
+
 // Ensure we have at least head and body.
 #define BLANK_HTML                      "<html><head></head><body></body></html>"
 #define CALLBACKS_OBJECT_NAME           "_phantom"
@@ -1233,6 +1235,29 @@ QString WebPage::header(int page, int numPages)
 QString WebPage::footer(int page, int numPages)
 {
     return getHeaderFooter(m_paperSize, "footer", m_mainFrame, page, numPages);
+}
+
+void WebPage::onPage(int page, int numPages, QPainter& painter)
+{
+    //std::cout << "WebPage::onPage" << page << "/" << numPages << std::endl;
+    TextCapturingQPainter& p = (TextCapturingQPainter&) painter; //valid upcast
+    QVariant onPageHandler = m_paperSize.value("onPage");
+    if (onPageHandler.canConvert<QObject*>()){
+        //std::cout << "onPage is something" << std::endl;
+        Callback* caller = qobject_cast<Callback*>(onPageHandler.value<QObject*>());
+        if (caller) {
+            //std::cout << "caller is something" << std::endl;
+            QStringList list = p.getTextlist();
+            //for (int i=0; i<list.size(); ++i)
+                //std::cout << i << ": " << list.at(i).toLocal8Bit().constData() << std::endl;
+            caller->call(QVariantList() << list << page << numPages);
+        } else {
+            //std::cout << "caller is nothing" << std::endl;
+        }
+    } else {
+        //std::cout << "onPage is not a QObject" << std::endl;
+    }
+    p.resetTextlist();
 }
 
 void WebPage::_uploadFile(const QString &selector, const QStringList &fileNames)

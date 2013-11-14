@@ -128,10 +128,12 @@ public:
 
     void showInspector(const int remotePort = -1);
 
+    // struct QWebFrame::PrintCallback methods:
     QString footer(int page, int numPages);
     qreal footerHeight() const;
     QString header(int page, int numPages);
     qreal headerHeight() const;
+    void onPage(int page, int numPages, QPainter& painter);
 
     void setZoomFactor(qreal zoom);
     qreal zoomFactor() const;

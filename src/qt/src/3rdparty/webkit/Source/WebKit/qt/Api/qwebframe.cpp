@@ -1502,6 +1502,10 @@ void QWebFrame::print(QPrinter *printer, PrintCallback *callback, QPainter& pain
     for (int i = 0; i < docCopies; ++i) {
         int page = fromPage;
         while (true) {
+            int logicalPage, logicalPages;
+            if (callback)
+                d->frame->getPagination(page, printContext.pageCount(), logicalPage, logicalPages);
+
             for (int j = 0; j < pageCopies; ++j) {
                 if (printer->printerState() == QPrinter::Aborted
                     || printer->printerState() == QPrinter::Error) {
@@ -1510,8 +1514,6 @@ void QWebFrame::print(QPrinter *printer, PrintCallback *callback, QPainter& pain
                 }
                 if (headerFooter.isValid()) {
                     // print header/footer
-                    int logicalPage, logicalPages;
-                    d->frame->getPagination(page, printContext.pageCount(), logicalPage, logicalPages);
                     headerFooter.paintHeader(ctx, pageRect, logicalPage, logicalPages);
                     headerFooter.paintFooter(ctx, pageRect, logicalPage, logicalPages);
                 }
@@ -1519,6 +1521,9 @@ void QWebFrame::print(QPrinter *printer, PrintCallback *callback, QPainter& pain
                 if (j < pageCopies - 1)
                     printer->newPage();
             }
+
+            if (callback)
+                callback->onPage(logicalPage, logicalPages, painter);
 
             if (page == toPage)
                 break;

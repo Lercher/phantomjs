@@ -209,6 +209,8 @@ public:
         virtual QString header(int page, int numPages) = 0;
         /// footer contents (in HTML) on page @p page
         virtual QString footer(int page, int numPages) = 0;
+        /// notification hook for page changes
+        virtual void onPage(int page, int numPages, QPainter &painter) = 0;
     };
 #endif
 
