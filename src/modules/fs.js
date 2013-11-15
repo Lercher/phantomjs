@@ -266,3 +266,15 @@ exports.split = function (path) {
         // And split
         .split("/")
 };
+
+// returns "OK" or an error message
+// note that a transactional message sent to a nontransactional queue gets dropped without notice
+exports.msmqSendUtf8StringTransactional = function (messagequeue, label, content) {
+    return exports._msmqSendUtf8String(messagequeue, label, content, true);
+};
+
+// returns "OK" or an error message
+// note that a nontransactional message sent to a transactional queue gets routed to the dead letter queue
+exports.msmqSendUtf8String = function (messagequeue, label, content) {
+    return exports._msmqSendUtf8String(messagequeue, label, content, false);
+};

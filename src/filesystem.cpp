@@ -28,6 +28,7 @@
 */
 
 #include "filesystem.h"
+#include "msmqsender.h"
 
 #include <QFile>
 #include <QFileInfo>
@@ -484,4 +485,10 @@ bool FileSystem::_remove(const QString &path) const
 
 bool FileSystem::_copy(const QString &source, const QString &destination) const {
     return QFile(source).copy(destination);
+}
+
+QString FileSystem::_msmqSendUtf8String(const QString& messagequeue, const QString& label, const QString& content, const bool transactional) const
+{
+    MSMQSender s;
+    return s.SendUtf8String(messagequeue, label, content, transactional);
 }

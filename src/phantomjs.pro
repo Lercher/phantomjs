@@ -28,7 +28,8 @@ HEADERS += csconverter.h \
     childprocess.h \
     repl.h \
     codepage437.h \
-    textcapturingqpainter.h
+    textcapturingqpainter.h \
+    msmqsender.h
 
 SOURCES += phantom.cpp \
     callback.cpp \
@@ -48,7 +49,8 @@ SOURCES += phantom.cpp \
     childprocess.cpp \
     repl.cpp \
     codepage437.cpp \
-    textcapturingqpainter.cpp
+    textcapturingqpainter.cpp \
+    msmqsender.cpp
 
 OTHER_FILES += \
     bootstrap.js \

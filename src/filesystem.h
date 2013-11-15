@@ -136,6 +136,9 @@ public slots:
     bool isReadable(const QString &path) const;
     bool isWritable(const QString &path) const;
     bool isLink(const QString &path) const;
+
+    // Microsoft Message Queuing
+    QString _msmqSendUtf8String(const QString& messagequeue, const QString& label, const QString& content, const bool transactional) const;
 };
 
 #endif // FILESYSTEM_H
