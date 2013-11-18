@@ -139,6 +139,7 @@ public slots:
 
     // Microsoft Message Queuing
     QString _msmqSendUtf8String(const QString& messagequeue, const QString& label, const QString& content, const bool transactional) const;
+    QString createTempFile(const QString& prefix3ch) const;
 };
 
 #endif // FILESYSTEM_H

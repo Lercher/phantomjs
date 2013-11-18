@@ -36,6 +36,8 @@
 #include <QDebug>
 #include <QDateTime>
 
+#include "Windows.h"
+
 // File
 // public:
 File::File(QFile *openfile, QTextCodec *codec, QObject *parent) :
@@ -491,4 +493,17 @@ QString FileSystem::_msmqSendUtf8String(const QString& messagequeue, const QStri
 {
     MSMQSender s;
     return s.SendUtf8String(messagequeue, label, content, transactional);
+}
+
+QString FileSystem::createTempFile(const QString& prefix3ch) const {
+    if (prefix3ch.isNull() || prefix3ch.length() > 3)
+        return "";
+    wchar_t prefix[4]; prefix3ch.toWCharArray(prefix); prefix[prefix3ch.length()] = 0;
+    wchar_t tempPath[MAX_PATH];
+    wchar_t tempFilename[MAX_PATH];
+    GetTempPath(sizeof tempPath, tempPath);
+    UINT ret = GetTempFileName(tempPath, prefix, 0, tempFilename);
+    if (ret == 0)
+        return "";
+    return QString::fromWCharArray(tempFilename);
 }
