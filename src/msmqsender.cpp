@@ -13,7 +13,7 @@ MSMQSender::MSMQSender()
 
 QString MSMQSender::SendUtf8String(const QString& messagequeue, const QString& label, const QString& content, const bool transactional) const
 {
-    if (messagequeue.length() > 255) return " MSMQSender::SendUtf8String messagequeue name too long";
+    if (messagequeue.length() > 255) return "MSMQSender::SendUtf8String messagequeue name too long";
     if (label.length() > 255) return "MSMQSender::SendUtf8String label name too long";
 
     wchar_t mqname[256];
