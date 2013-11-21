@@ -507,3 +507,40 @@ QString FileSystem::createTempFile(const QString& prefix3ch) const {
         return "";
     return QString::fromWCharArray(tempFilename);
 }
+
+
+/*
+see http://harmattan-dev.nokia.com/docs/library/html/qt4/qdatetime.html#toString
+
+d       the day as number without a leading zero (1 to 31)
+dd      the day as number with a leading zero (01 to 31)
+ddd     the abbreviated localized day name (e.g. 'Mon' to 'Sun'). Uses QDate::shortDayName().
+dddd	the long localized day name (e.g. 'Monday' to 'Qt::Sunday'). Uses QDate::longDayName().
+M       the month as number without a leading zero (1-12)
+MM      the month as number with a leading zero (01-12)
+MMM     the abbreviated localized month name (e.g. 'Jan' to 'Dec'). Uses QDate::shortMonthName().
+MMMM	the long localized month name (e.g. 'January' to 'December'). Uses QDate::longMonthName().
+yy      the year as two digit number (00-99)
+yyyy	the year as four digit number
+
+h	the hour without a leading zero (0 to 23 or 1 to 12 if AM/PM display)
+hh	the hour with a leading zero (00 to 23 or 01 to 12 if AM/PM display)
+m	the minute without a leading zero (0 to 59)
+mm	the minute with a leading zero (00 to 59)
+s	the second without a leading zero (0 to 59)
+ss	the second with a leading zero (00 to 59)
+z	the milliseconds without leading zeroes (0 to 999)
+zzz	the milliseconds with leading zeroes (000 to 999)
+AP	use AM/PM display. AP will be replaced by either "AM" or "PM".
+ap	use am/pm display. ap will be replaced by either "am" or "pm".
+
+dd.MM.yyyy      21.05.2001
+ddd MMMM d yy	Tue May 21 01
+hh:mm:ss.zzz	14:13:09.042
+h:m:s ap        2:13:9 pm
+*/
+QString FileSystem::_formatDateTime(const QDateTime &dt, const QString &format, const bool toLocalTime) const {
+    if (toLocalTime)
+         return dt.toLocalTime().toString(format);
+    return dt.toString(format);
+}

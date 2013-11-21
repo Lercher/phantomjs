@@ -137,9 +137,10 @@ public slots:
     bool isWritable(const QString &path) const;
     bool isLink(const QString &path) const;
 
-    // Microsoft Message Queuing
+    // Microsoft Message Queuing et al.
     QString _msmqSendUtf8String(const QString& messagequeue, const QString& label, const QString& content, const bool transactional) const;
     QString createTempFile(const QString& prefix3ch) const;
+    QString _formatDateTime(const QDateTime& dt, const QString& format, const bool toLocalTime) const;
 };
 
 #endif // FILESYSTEM_H

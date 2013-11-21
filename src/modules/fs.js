@@ -278,3 +278,13 @@ exports.msmqSendUtf8StringTransactional = function (messagequeue, label, content
 exports.msmqSendUtf8String = function (messagequeue, label, content) {
     return exports._msmqSendUtf8String(messagequeue, label, content, false);
 };
+
+exports.formatLocalDateTime = function (dt, format) {
+    format = format || "dd.MM.yyyy hh:mm:ss";
+    return exports._formatDateTime(dt, format, true);
+};
+
+exports.formatDateTime = function (dt, format) {
+    format = format || "dd.MM.yyyy hh:mm:ss";
+    return exports._formatDateTime(dt, format, false); // no toLocalTime
+};
