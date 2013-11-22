@@ -1695,6 +1695,8 @@ void FrameLoaderClientQt::emitLoadFinished(bool ok)
     m_isOriginatingLoad = false;
 
     QWebPage* webPage = m_webFrame->page();
+
+    //printf("FrameLoaderClientQt::emitLoadFinished\n"); //LE
     if (wasOriginatingLoad && webPage)
         emit webPage->loadFinished(ok);
     emit m_webFrame->loadFinished(ok);

@@ -29,6 +29,12 @@
 #include "GraphicsContext.h"
 #include "PrintContext.h"
 
+#include <QCoreApplication>
+#include <QEventLoop>
+#include <QElapsedTimer>
+
+#include <iostream>
+
 // for custom header or footers in printing
 class HeaderFooter
 {
@@ -131,7 +137,17 @@ void HeaderFooter::paintFooter(WebCore::GraphicsContext& ctx, const WebCore::Int
 
 void HeaderFooter::paint(WebCore::GraphicsContext& ctx, const WebCore::IntRect& pageRect, const QString& contents, int height)
 {
+    page.mainFrame()->headerFooterLoaded = false;
+    bool con = QObject::connect(page.mainFrame(), SIGNAL(loadFinished(bool)), page.mainFrame(), SLOT(slotHeaderFooterLoaded(bool)));
     page.mainFrame()->setHtml(contents);
+
+    QElapsedTimer t; t.start(); // wait for page.mainFrame() signal loadFinished() for max 5s:
+    while(!page.mainFrame()->headerFooterLoaded && t.elapsed() < 5000) {
+        QCoreApplication::processEvents(QEventLoop::WaitForMoreEvents|QEventLoop::AllEvents, 500); // 500ms max waittime for any event
+    }
+    if (!page.mainFrame()->headerFooterLoaded) {
+        std::cout << "warning: header/footer page load time " << t.elapsed() << "ms" << std::endl;
+    }
 
     printCtx->begin(pageRect.width(), height);
     float tempHeight;

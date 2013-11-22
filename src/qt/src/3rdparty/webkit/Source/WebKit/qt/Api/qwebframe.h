@@ -213,6 +213,7 @@ public:
         virtual void onPage(int page, int numPages, QPainter &painter) = 0;
     };
 #endif
+    bool headerFooterLoaded;
 
 public Q_SLOTS:
     QVariant evaluateJavaScript(const QString& scriptSource, const QString& file = QString());
@@ -220,6 +221,7 @@ public Q_SLOTS:
     void print(QPrinter *printer) const;
     void print(QPrinter *printer, PrintCallback *callback, QPainter& painter) const;
 #endif
+    void slotHeaderFooterLoaded(const bool ok);
 
 Q_SIGNALS:
     void javaScriptWindowObjectCleared();

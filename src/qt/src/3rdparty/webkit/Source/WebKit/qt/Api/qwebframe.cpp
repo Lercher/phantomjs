@@ -535,6 +535,7 @@ void QWebFramePrivate::_q_orientationChanged()
 QWebFrame::QWebFrame(QWebPage *parent, QWebFrameData *frameData)
     : QObject(parent)
     , d(new QWebFramePrivate)
+    , headerFooterLoaded(false)
 {
     d->page = parent;
     d->init(this, frameData);
@@ -1968,6 +1969,12 @@ QWebFrame *QWebHitTestResult::frame() const
     if (!d)
         return 0;
     return d->frame;
+}
+
+void QWebFrame::slotHeaderFooterLoaded(const bool ok)
+{
+    //printf("\nQWebFrame::slotHeaderFooterLoaded()\n");
+    headerFooterLoaded = true;
 }
 
 #include "moc_qwebframe.cpp"
